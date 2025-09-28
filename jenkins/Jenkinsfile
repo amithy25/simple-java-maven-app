@@ -6,22 +6,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                // Use bat for Windows
+                bat 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    // Archive JUnit test reports
+                    junit 'target\\surefire-reports\\*.xml'
                 }
             }
         }
         stage('Deliver') { 
             steps {
-                sh './jenkins/scripts/deliver.sh' 
+                // Call Windows batch script instead of sh
+                bat 'jenkins\\scripts\\deliver.bat'
             }
         }
     }
