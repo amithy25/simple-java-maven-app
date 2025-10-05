@@ -12,6 +12,7 @@ public class App {
     public static void main(String[] args) {
         System.out.println(MESSAGE);
         System.out.println("Hello Again!");
+        System.out.println("Hello from Docker!")'4;
     }
 
     public String getMessage() {
