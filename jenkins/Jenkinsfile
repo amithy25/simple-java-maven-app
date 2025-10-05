@@ -8,7 +8,7 @@ pipeline {
         // Nexus Configuration - Update with your EC2 IP
         NEXUS_URL = "http://54.82.122.170:8081"
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
-        SONARQUBE_URL = "http://54.82.122.170:9000"
+        SONARQUBE_URL = "http://sonarqube:9000"
         //SONARQUBE_TOKEN = credentials('sonarqube-token')
     }
     
